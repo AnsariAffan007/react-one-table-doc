@@ -1,9 +1,8 @@
-import { Calendar, ChevronDown, Home, Inbox, Search, Settings } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -14,6 +13,7 @@ import {
 } from "@/components/ui/sidebar"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collapsible"
 import { ScrollArea } from "./ui/scroll-area"
+import Link from "next/link"
 
 /*
   Getting Started
@@ -100,11 +100,13 @@ export function AppSidebar() {
     <Sidebar>
 
       <SidebarHeader className="px-4">
-        <h4 className="font-bold">
-          <span>React</span>
-          <span className="text-chart-3">One</span>
-          <span>Table</span>
-        </h4>
+        <Link href={"/"}>
+          <h4 className="font-bold">
+            <span>React</span>
+            <span className="text-sky-500">One</span>
+            <span>Table</span>
+          </h4>
+        </Link>
       </SidebarHeader>
 
       <ScrollArea className='h-[100%]'>

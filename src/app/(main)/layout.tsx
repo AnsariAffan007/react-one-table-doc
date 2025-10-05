@@ -7,8 +7,12 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     <SidebarProvider>
       <AppSidebar />
       <main>
-        <SidebarTrigger />
-        {children}
+        <div className='p-2'>
+          <SidebarTrigger className='cursor-pointer' />
+        </div>
+        <div className='p-2 pt-0'>
+          {children}
+        </div>
       </main>
     </SidebarProvider>
   )
