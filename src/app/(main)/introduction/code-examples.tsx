@@ -1,9 +1,7 @@
-"use client"
-
-import ShikiHighlighter from "react-shiki"
+import { BundledLanguage, codeToHtml } from "shiki"
 
 export const HeadlessUIBlockExample = () => (
-  <ShikiHighlighter language="tsx" theme="dark-plus">
+  <CodeBlock lang="tsx">
     {`<Table
   components={{
     Table: MuiTable,
@@ -17,11 +15,11 @@ export const HeadlessUIBlockExample = () => (
     })
   }}
 />`.trim()}
-  </ShikiHighlighter>
+  </CodeBlock>
 )
 
 export const FeatureRepetitionExample = () => (
-  <ShikiHighlighter language="tsx" theme="dark-plus">
+  <CodeBlock lang="tsx">
     {`const UserListingComponent = () => {
   const { columnPins, pinColumn, unPinColumn } = useColumnPin()
   // Use "pinColumn" and "unPinColumn" where you need it, and they will alter the "columnPins" state for you
@@ -33,5 +31,19 @@ export const FeatureRepetitionExample = () => (
     />
   )
 }`.trim()}
-  </ShikiHighlighter>
+  </CodeBlock>
 )
+
+interface Props {
+  children: string
+  lang: BundledLanguage
+}
+
+async function CodeBlock(props: Props) {
+  const out = await codeToHtml(props.children, {
+    lang: props.lang,
+    theme: 'dark-plus'
+  })
+
+  return <div className="[&>pre]:p-2" dangerouslySetInnerHTML={{ __html: out }} />
+}
