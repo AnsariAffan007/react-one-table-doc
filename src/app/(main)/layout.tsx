@@ -9,13 +9,13 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     <SidebarProvider>
       <AppSidebar />
       <main>
-        <div className='p-2 flex items-center gap-x-2'>
+        <div className='p-4 flex items-center gap-x-2'>
           <Button asChild size="icon" variant="outline">
             <SidebarTrigger className='cursor-pointer' />
           </Button>
           <Input type='search' placeholder='Search' />
         </div>
-        <div className='p-2 pt-0'>
+        <div className='p-4 pt-0'>
           {children}
         </div>
       </main>
