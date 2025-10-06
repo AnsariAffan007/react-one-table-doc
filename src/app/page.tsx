@@ -15,10 +15,10 @@ export default function Home() {
           <div className="flex gap-x-2 items-stretch justify-center mt-2">
             <Button
               variant={"outline"}
-              className="cursor-pointer"
+              className="cursor-pointer border-2 border-white"
               asChild
             >
-              <Link href={"/docs"}>
+              <Link href={"/introduction"}>
                 Read the Docs
               </Link>
             </Button>

@@ -50,9 +50,9 @@ const menu = [
   {
     title: "Getting Started",
     items: [
-      { title: "Introduction", url: "#" },
-      { title: "Installation", url: "#" },
-      { title: "Quick Start", url: "#" },
+      { title: "Introduction", url: "/introduction" },
+      { title: "Installation", url: "/installation" },
+      { title: "Quick Start", url: "/quick-start" },
     ]
   },
   {
@@ -85,6 +85,7 @@ const menu = [
   {
     title: "Functionalities",
     items: [
+      { title: "Column Pinning", url: "#" },
       { title: "Column Ordering", url: "#" },
       { title: "Row Selection", url: "#" },
       { title: "Row Reordering", url: "#" },
@@ -130,10 +131,10 @@ export function AppSidebar() {
                       {menuItem.items.map((item) => (
                         <SidebarMenuItem key={item.title}>
                           <SidebarMenuButton asChild>
-                            <a href={item.url}>
+                            <Link href={item.url}>
                               {/* <item.icon /> */}
                               <span>{item.title}</span>
-                            </a>
+                            </Link>
                           </SidebarMenuButton>
                         </SidebarMenuItem>
                       ))}
