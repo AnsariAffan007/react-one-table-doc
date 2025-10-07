@@ -1,6 +1,5 @@
-import { CodeBlock } from '@/components/code-block'
 import React from 'react'
-import { DataObject, Installation, TableCall } from './code-examples'
+import { DataArrayDefinitions, DataObject, Installation, TableCall } from './code-examples'
 
 const QuickStart = () => {
   return (
@@ -35,15 +34,16 @@ const QuickStart = () => {
 
         <section id='define-data-array'>
           <h1 className='text-2xl font-bold mb-2'>Define your Data Array</h1>
-          <div className='text-slate-300 mt-2'>
-            The data state should be of a stable reference. Ways of doing this is through a state variable, the useMemo hook, or defining the array itself outside of your component. React One Table uses the <pre className='mx-2 inline'><code>useReactTable</code></pre> hook internally to map out the data to jsx, and if it recieves a data array which is of unstable reference, it might go into an infinite re-render loop, so this part is important.
+          <div className='text-slate-300 mb-2'>
+            The data state should be of a stable reference. Ways of doing this is through a state variable, the useMemo hook, or defining the array itself outside of your component. React One Table uses the <pre className='mx-2 inline'><code>useReactTable</code></pre> hook internally to map out the data to jsx, and if it recieves a data array which is of unstable reference, it might go into an infinite re-render loop, so this part is important. The variable should also be an array at every time, be it empty, but never anything else, as again, the <pre className='mx-2 inline'><code>useReactTable</code></pre> hook from tanstack may throw errors because of it.
           </div>
+          <DataArrayDefinitions />
         </section>
 
         <section id='define-columns'>
           <h1 className='text-2xl font-bold mb-2'>Defining Columns</h1>
           <div className='text-slate-300 mt-2'>
-            Now {`we'll`} define the columns for our table. Defining columns is the same as Tanstack. This library does not provide any wrapper around that concept. Columns should be of the type <pre className='mx-2 inline'><code>{`ColumnDef<TData, TValue>[]`}</code></pre>, and this is exported from the Tanstack library itself. The stable reference point applies to the column array as well.
+            Now {`we'll`} define the columns for our table. Defining columns is the same as Tanstack. This library does not provide any wrapper around that concept. Columns should be of the type <pre className='mx-2 inline'><code>{`ColumnDef<TData, TValue>[]`}</code></pre>, and this is exported from the Tanstack library itself. The stable reference point from above applies to the column array as well.
           </div>
         </section>
 

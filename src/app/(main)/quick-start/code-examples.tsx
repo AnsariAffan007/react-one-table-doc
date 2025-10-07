@@ -40,3 +40,21 @@ export const TableCall = () => (
     }
   </CodeBlock>
 )
+
+export const DataArrayDefinitions = () => (
+  <CodeBlock lang="tsx">
+    {
+      `
+// As a state (suggested)
+const [data] = useState<User[]>([]);
+
+// Through useMemo
+const data = useMemo<User[]>(() => [], []);
+
+// Or Define it outside of the component as a normal variable
+const data: User[] = [];
+      `
+        .trim()
+    }
+  </CodeBlock >
+)
