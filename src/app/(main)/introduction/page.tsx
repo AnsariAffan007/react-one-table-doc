@@ -3,7 +3,7 @@ import { FeatureRepetitionExample, HeadlessUIBlockExample } from './code-example
 
 const Introduction = () => {
   return (
-    <main id='introduction' className='text-slate-200 text-primary pt-6'>
+    <main id='introduction' className='text-slate-200 pt-6'>
       <article className='flex flex-col gap-y-8'>
 
         <section>

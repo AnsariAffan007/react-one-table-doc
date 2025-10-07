@@ -18,7 +18,6 @@ import Link from "next/link"
 /*
   Getting Started
     intro
-    installation
     quick start
   Prerequisites
     Tanstack table overview
@@ -51,7 +50,6 @@ const menu = [
     title: "Getting Started",
     items: [
       { title: "Introduction", url: "/introduction" },
-      { title: "Installation", url: "/installation" },
       { title: "Quick Start", url: "/quick-start" },
     ]
   },
