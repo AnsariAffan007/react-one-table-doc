@@ -1,4 +1,4 @@
-import { CodeBlock } from "@/components/code-example"
+import { CodeBlock } from "@/components/code-block"
 
 export const HeadlessUIBlockExample = () => (
   <CodeBlock lang="tsx">
