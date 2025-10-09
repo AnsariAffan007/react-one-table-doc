@@ -57,7 +57,7 @@ const menu = [
     title: "Pre-requisites",
     items: [
       { title: "Tanstack Table", url: "/tanstack-table" },
-      { title: "Column Def Type", url: "#" },
+      { title: "Column Def Type", url: "/columndef" },
     ]
   },
   {
